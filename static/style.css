@@ -1,0 +1,135 @@
+/* === ANIMAÇÕES === */
+
+@keyframes startMenu{
+	0%{
+		opacity: 0;
+		position: absolute;
+		left: -300px;
+	}
+
+	100%{
+		opacity: 1;
+		position: absolute;
+		left: 0;
+	}
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: #800080;
+  }
+  50% {
+    background-color: #cc00cc;
+    color: #FFFAFA;
+  }
+  100% {
+    background-color: #FFFAFA;
+    color: #800080;
+  }
+}
+
+/* === ESTILOS CABEÇALHO === */
+
+*{
+	text-decoration: none;
+	font-family: arial;
+	margin: 0;
+	padding: 0;
+
+}
+
+body{
+	animation: startMenu 2s;
+	background:  linear-gradient(45deg, white, #ffccff);
+	background-repeat: no-repeat;
+	
+}
+
+.cabecalho{
+	background: #660066;
+	height: 120px;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	
+}
+
+.logo{
+	padding-left: 55px;
+	margin: 10px;
+}
+
+.texto{
+	color: 	#FFFAFA;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding:10px;
+	font-size: 1.5em;
+}
+
+.menu{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: 0px;
+}
+
+nav a{
+	background:#800080;
+	border: 1px solid #FFFAFA;
+	text-decoration: none;
+	padding: 15px;
+	margin: 10px;
+	font-size: 1.7em;
+	height: 70px;
+	margin-top: 15px;
+	color: 	#FFFAFA;
+	font-family: 'Indie Flower', cursive;
+}
+
+nav a:hover{
+	animation: changeBackgroundColor 1s;
+	animation-iteration-count: 1; 
+	background-color: #FFFAFA;
+    color: #800080;
+
+}
+
+/* === MAIN === */
+
+.slider {
+    display: block;
+    height: 293px;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.container{
+	margin: 15px;
+	background-color: whitesmoke;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.rodape{
+	background: #660066;
+	height: 120px;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	
+}
+
+
+
+
+
