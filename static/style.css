@@ -35,14 +35,12 @@
 	font-family: arial;
 	margin: 0;
 	padding: 0;
-
 }
 
 body{
 	animation: startMenu 2s;
 	background:  linear-gradient(45deg, white, #ffccff);
 	background-repeat: no-repeat;
-	
 }
 
 .cabecalho{
@@ -52,8 +50,6 @@ body{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-
-	
 }
 
 .logo{
@@ -96,7 +92,6 @@ nav a:hover{
 	animation-iteration-count: 1; 
 	background-color: #FFFAFA;
     color: #800080;
-
 }
 
 /* === MAIN === */
@@ -125,8 +120,6 @@ nav a:hover{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-
-	
 }
 
 
