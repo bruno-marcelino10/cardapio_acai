@@ -4,7 +4,6 @@
 
 <html>
 <head>
-	<!-- {%extends "index.html"} -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Super Açaí</title>
@@ -24,8 +23,6 @@
 
 	<div class="row">
 
-		<!-- {% block cabecalho%} {% endblock%} -->
-
 		<!-- === INÍCIO CABEÇALHO === -->
 		<header class="cabecalho">
 
@@ -39,9 +36,9 @@
 
 			<!-- === MENU DE NAVEGAÇÃO === -->
 			<nav class="menu">
-				<a href="index.html">Produtos</a>
-				<a href="unidades.html">Unidades</a>
-				<a href="contato.html">Contato</a>
+				<a href="{{ url_for('produtos') }}">Produtos</a>
+				<a href="{{ url_for('unidades') }}">Unidades</a>
+				<a href="{{ url_for('contato') }}">Contato</a>
 			</nav>
 		</header>
 		<!-- === FIM CABEÇALHO === --> 
@@ -85,19 +82,20 @@
 			<div class="texto">
 				<h3>Algumas de nossas Unidades</h3>
 				<div class="unidades_rodape">
-					<a href="unidades.html" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
+					<a href="{{ url_for('unidades') }}" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
 					<hr>
 				</div>
 
 				<div class="unidades_rodape">
-					<a href="unidades.html" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
+					<a href="{{ url_for('unidades') }}" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
 					<hr>
 				</div>
 
 				<div class="unidades_rodape">
-					<a href="unidades.html" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
+					<a href="{{ url_for('unidades') }}" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
 					<hr>
-				</div>
+			</div>
+
 
 			
 			</div>

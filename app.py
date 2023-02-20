@@ -8,11 +8,11 @@ def produtos():
 
 @app.route("/unidades")
 def unidades():
-    return "Em construção"
+    return render_template("unidades.html")
 
 @app.route("/contato")
 def contato():
-    return "Em construção"
+    return render_template("contato.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
