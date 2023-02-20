@@ -28,6 +28,21 @@
   }
 }
 
+@keyframes expandItems{
+
+	0%{
+		width: 500px;
+		opacity: 0.8;
+	}
+
+	100%{
+		width: 550px;
+		height: 420px;
+		opacity: 1;
+
+	}
+}
+
 /* === ESTILOS CABEÇALHO === */
 
 *{
@@ -37,9 +52,13 @@
 	padding: 0;
 }
 
+a{
+	text-decoration: none;
+}
+
 body{
 	animation: startMenu 2s;
-	background:  linear-gradient(45deg, white, #ffccff);
+	background:  linear-gradient(45deg, #ffccff ,#660066 );
 	background-repeat: no-repeat;
 }
 
@@ -55,6 +74,7 @@ body{
 .logo{
 	padding-left: 55px;
 	margin: 10px;
+
 }
 
 .texto{
@@ -96,6 +116,13 @@ nav a:hover{
 
 /* === MAIN === */
 
+main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
 .slider {
     display: block;
     height: 293px;
@@ -105,24 +132,96 @@ nav a:hover{
     position: relative;
 }
 
-.container{
+/*.container{
 	margin: 15px;
 	background-color: whitesmoke;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}*/
+
+
+
+.titulo{
+	color: whitesmoke;
+	margin: 20px;
+	padding: 10px;
+	width: 600px;
+}
+
+.receitas{
+	opacity: 0.85;
+	width: 500px;
+	height: 400px;
+	margin: 20px;
+	/*display: flex;
+	flex-direction: column;
+	align-content: center*/;
+	background: whitesmoke;
+	padding: 15px;
+	color: black;
+}
+
+.conteudo{
+	float: left;
+}
+
+.receitas:hover{
+	animation: expandItems 1s;
+	width: 550px;
+	height: 420px;
+	opacity: 1;
 }
 
 .rodape{
 	background: #660066;
-	height: 120px;
+	height: 150px;
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
+}
+
+.unidades_rodape{
+	height: 35px;
+	color: 	#FFFAFA;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.6em;
+	margin: 0;
+	padding: 0;
+}
+
+.link_rodape{
+	text-decoration: none;
+	color: #FFFAFA;
+}
+.link_rodape:hover{
+	font-size: 1.2em;
+	color: yellow;
 }
 
 
 
 
 
+<!-- === INÍCIO CABEÇALHO === -->
+		<header class="cabecalho">
+
+			<!-- === LOGO === -->
+			<img src="imagens/logo.png" class="logo">
+
+			<div class="texto">
+				<h1>Super Açaí</h2>
+				<p>O melhor açaí de BH e região</p>
+			</div>
+
+			<!-- === MENU DE NAVEGAÇÃO === -->
+			<nav class="menu">
+				<a href="index.html">Produtos</a>
+				<a href="unidades.html">Unidades</a>
+				<a href="contato.html">Contato</a>
+			</nav>
+		</header>
+		<!-- === FIM CABEÇALHO === --> 

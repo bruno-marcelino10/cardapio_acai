@@ -1,6 +1,10 @@
 <!DOCTYPE html>
+
+
+
 <html>
 <head>
+	<!-- {%extends "index.html"} -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Super Açaí</title>
@@ -20,10 +24,10 @@
 
 	<div class="row">
 
-		
+		<!-- {% block cabecalho%} {% endblock%} -->
+
 		<!-- === INÍCIO CABEÇALHO === -->
 		<header class="cabecalho">
-			{%block cabecalho%}
 
 			<!-- === LOGO === -->
 			<img src="imagens/logo.png" class="logo">
@@ -39,51 +43,17 @@
 				<a href="unidades.html">Unidades</a>
 				<a href="contato.html">Contato</a>
 			</nav>
-
-			{%endblock%}
 		</header>
-
-		<!-- === FIM CABEÇALHO === -->
-		
+		<!-- === FIM CABEÇALHO === --> 
 
 
 		<!-- === INÍCIO MAIN === -->
 		<main class="main">
 
-			<div class="conteudo" align="center"> 
+			<div class="container" align="center"> 
 				
-				<h1 class="titulo">Confira nossos produtos:</h1>
+				<h1>Confira nossos produtos:</h1>
 
-				<a href="vitamina_abacate.html">	
-					<div class="receitas" id="primeirareceita">
-		            	<h3 class="receitasp">Vitamina de Abacate</h3>
-		            	<img src="imagens/vitaminas/vitamina-abacate.jpg" width="300px" height="300px" align="center">
-		        	</div>
-				</a>
-
-
-				<div class="receitas">
-		            <h3 class="receitasp">Vitamina de Açai</h3>
-		            <img src="imagens/vitaminas/vitamina-açai.jpg" width="300px" height="300px">    
-		        </div>
-		        <div class="receitas">
-		            <h3 class="receitasp">Vitamina de Banana com Aveia</h3>
-		            <img src="imagens/vitaminas/vitamina-banana-aveia.jpg" width="300px" height="300px">
-		        </div>
-		        <div class="receitas">
-		            <h3 class="receitasp">Vitamina de Morango</h3>
-		            <img src="imagens/vitaminas/vitamina-morango.jpg" width="300px" height="300px">
-		        </div>
-		        <div class="receitas">
-		            <h3 class="receitasp">Vitamina de Pessego</h3>
-		            <img src="imagens/vitaminas/vitamina-pessego.png" width="300px" height="300px">
-		        </div>
-		        <div class="receitas">
-		            <h3 class="receitasp">Vitamina de Romã</h3>
-		            <img src="imagens/vitaminas/vitamina-romã.jpg" width="300px" height="300px">
-		        </div>
-
-					
 
 
 			</div>
