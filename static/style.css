@@ -179,7 +179,7 @@ main{
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 .unidades_rodape{
