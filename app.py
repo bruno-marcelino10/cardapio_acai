@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 
 @app.route("/")
 def produtos():
-    return render_template("index.html")
+    return render_template("index.html", values = cardapio.query.all()) # lista de objetos contendo produtos e caracteristicas)
 
 @app.route("/unidades")
 def unidades():

@@ -1,113 +1,17 @@
-<!DOCTYPE html>
+{% extends base.html %}
 
-
-
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Super Açaí</title>
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-	<link rel="stylesheet" type="text/css" href="../static/style.css">
-
-	<script type="text/javascript">script.js</script>
-
-	<style>
-  		@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-	</style>
-
-</head>
-<body>
-
-	<div class="row">
-
-		<!-- === INÍCIO CABEÇALHO === -->
-		<header class="cabecalho">
-
-			<!-- === LOGO === -->
-			<img src="imagens/logo.png" class="logo">
-
-			<div class="texto">
-				<h1>Super Açaí</h2>
-				<p>O melhor açaí de BH e região</p>
-			</div>
-
-			<!-- === MENU DE NAVEGAÇÃO === -->
-			<nav class="menu">
-				<a href="{{ url_for('produtos') }}">Produtos</a>
-				<a href="{{ url_for('unidades') }}">Unidades</a>
-				<a href="{{ url_for('contato') }}">Contato</a>
-			</nav>
-		</header>
-		<!-- === FIM CABEÇALHO === --> 
-
-
-		<!-- === INÍCIO MAIN === -->
-		<main class="main">
-
-			<div class="container" align="center"> 
-				
-				<h1>Confira nossos produtos:</h1>
-
-
-
-			</div>
-			
-		</main>
-		<!-- === FIM MAIN === -->
-
-
-		<!-- === INÍCIO RODAPÉ === -->
-		<footer class="rodape">
-
-			<!-- === LOGO === -->
-			
-			<div class="texto">
-				<h3>Nos siga nas redes sociais</h3>
-				<div class="unidades_rodape">
-					<a href="https://www.instagram.com" class="link_rodape"><p>Instagram: @super_acai</p></a>
-				</div>
-
-				<div class="unidades_rodape">
-					<a href="https://www.facebook.com" class="link_rodape"><p>Facebook: Super Açaí</p></a>
-				</div>
-
-				<div class="unidades_rodape">
-					<a href="https://www.gmail.com" class="link_rodape"><p>Email: contato.superacai@gmail.com</p></a>
-				</div>
-			</div>
-
-			<div class="texto">
-				<h3>Algumas de nossas Unidades</h3>
-				<div class="unidades_rodape">
-					<a href="{{ url_for('unidades') }}" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
-					<hr>
-				</div>
-
-				<div class="unidades_rodape">
-					<a href="{{ url_for('unidades') }}" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
-					<hr>
-				</div>
-
-				<div class="unidades_rodape">
-					<a href="{{ url_for('unidades') }}" class="link_rodape"><p>Rua Afonso de Almeira 715, Santa Glória - (31) 98560-3481</p></a>
-					<hr>
-			</div>
-
-
-			
-			</div>
-			<img src="imagens/logo.png" class="logo">
-
-			<!-- === MENU DE NAVEGAÇÃO === -->
-			
-		</footer>
-		<!-- === FIM RODAPÉ === -->
-
-
+{%block main%}
+<!-- === INÍCIO MAIN === -->
+<main class="main">
+	
+	<div class="container" align="center"> 
+		
+		<h1>Confira nossos produtos:</h1>
+		
+		
+		
 	</div>
-
-</body>
-</html>
+	
+</main>
+<!-- === FIM MAIN === -->
+{%endblock%}
