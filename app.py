@@ -1,15 +1,15 @@
 from flask import Flask, render_template, url_for, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
-from database_setup import users, cardapio
+#from database_setup import users, cardapio
 
 app = Flask(__name__)
 app.secret_key = "key"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.sqlite3"
-db = SQLAlchemy(app)
+#db = SQLAlchemy(app)
 
 @app.route("/")
 def produtos():
-    return render_template("index.html", values = cardapio.query.all()) # lista de objetos contendo produtos e caracteristicas)
+    return render_template("index.html") # lista de objetos contendo produtos e caracteristicas)
 
 @app.route("/unidades")
 def unidades():
@@ -105,5 +105,5 @@ def alterar_cardapio():
     return render_template("alterar_cardapio.html")
 
 if __name__ == "__main__":
-    db.create_all()
+   # db.create_all()
     app.run(debug=True)
