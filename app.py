@@ -4,7 +4,7 @@ from database_setup import users, cardapio
 
 app = Flask(__name__)
 app.secret_key = "key"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///admins.sqlite3"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.sqlite3"
 db = SQLAlchemy(app)
 
 @app.route("/")
