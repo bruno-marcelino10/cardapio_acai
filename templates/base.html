@@ -7,7 +7,7 @@
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
 
 	<script type="text/javascript">script.js</script>
 
@@ -23,10 +23,9 @@
 		
 		<!-- === INÍCIO CABEÇALHO === -->
 		<header class="cabecalho">
-			{%block cabecalho%}
 
 			<!-- === LOGO === -->
-			<img src="imagens/logo.png" class="logo">
+			<img src="{{ url_for('static', filename = 'imagens/logo.png') }}" class="logo">
 
 			<div class="texto">
 				<h1>Super Açaí</h2>
@@ -40,7 +39,6 @@
 				<a href="{{ url_for('contato') }}">Contato</a>
 			</nav>
 
-			{%endblock%}
 		</header>
 
 		<!-- === FIM CABEÇALHO === -->
@@ -48,8 +46,7 @@
 
 
 		<!-- === INÍCIO MAIN === -->
-		
-		{%block main%}`
+		{%block main%}
         {%endblock%}
 		<!-- === FIM MAIN === -->
 
@@ -94,7 +91,7 @@
 
 			
 			</div>
-			<img src="imagens/logo.png" class="logo">
+			<img src="{{ url_for('static', filename = 'imagens/logo.png') }}" class="logo">
 
 			<!-- === MENU DE NAVEGAÇÃO === -->
 			
