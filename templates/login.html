@@ -3,6 +3,12 @@
 {%block main%}
 <!-- === INÍCIO MAIN === -->
 
+{% with message = get_flashed_messages() %}
+  {% if message %}
+    <p>{{message}} </p>
+  {% endif %}
+{% endwith %}
+
  <div style="margin: 20px; display: flex; flex-direction: column;">
 
         <div class="texto" align="center">
