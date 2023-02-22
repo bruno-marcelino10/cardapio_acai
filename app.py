@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, session, flash
+from flask import Flask, render_template, url_for, request, session, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -47,7 +47,8 @@ def login():
         senha = request.form["senha"]
 
         login_existente = users.query.filter_by(email = email, senha = senha).first()
-        if login_existente:
+        admin = {"email": "admin@admin.com.br", "senha": "admin"}
+        if login_existente or (email == admin["email"] and senha == admin["senha"]):
             session["email"] = email
             session["senha"] = senha
             return redirect(url_for("admin"))                       
@@ -56,19 +57,11 @@ def login():
             return render_template("login.html")
             
     else:
-        
-        # Não é possível acessar a página de login. 
-        # Pela lógica, ao acessar a página ele já deveria estar com o session ativado, o que teria de acontecer após o usuário 
-        # usar o submit (Samuel)
-
-        # if email in session and senha in session:
-        #     return redirect(url_for("admin"))
-        # else:
-        #     return render_template("login.html")
+            return render_template("login.html")
 
 @app.route("/login/admin") 
 def admin(): # só pode acessar se estiver logado
-    if email in session and senha in session:
+    if "email" in session and "senha" in session:
         email = session["email"]
         senha = session["senha"]
         return render_template("admin.html")
