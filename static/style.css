@@ -71,6 +71,21 @@ body{
 	justify-content: space-between;
 }
 
+.links_laterais{
+	display: flex;
+	flex-direction: column;
+}
+
+.login{
+	color: white;
+	padding: 7px;
+}
+
+.login:hover{
+	background: white;
+	color: #660066;
+}
+
 .logo{
 	padding-left: 55px;
 	margin: 10px;
@@ -202,26 +217,13 @@ main{
 	color: yellow;
 }
 
+.formulario_email{
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid whitesmoke;
+}
 
 
 
-
-<!-- === INÍCIO CABEÇALHO === -->
-		<header class="cabecalho">
-
-			<!-- === LOGO === -->
-			<img src="imagens/logo.png" class="logo">
-
-			<div class="texto">
-				<h1>Super Açaí</h2>
-				<p>O melhor açaí de BH e região</p>
-			</div>
-
-			<!-- === MENU DE NAVEGAÇÃO === -->
-			<nav class="menu">
-				<a href="index.html">Produtos</a>
-				<a href="unidades.html">Unidades</a>
-				<a href="contato.html">Contato</a>
-			</nav>
-		</header>
-		<!-- === FIM CABEÇALHO === --> 

@@ -2,6 +2,32 @@
 
 {%block main%}
 <!-- === INÍCIO MAIN === -->
+<div style="margin: 20px; display: flex; flex-direction: column;">
 
+        <div class="texto" align="center">
+          <div>
+            <div class="card-header">
+              Cadastrar Usuário
+            </div>
+            <div >
+              <form action="#" method="post" class="formulario_email"> 
+                <div class="form-group">
+                  <input name="email" type="email" class="form-control" placeholder="Insira o E-mail">
+                </div>
+                <br>
+                <div class="form-group">
+                  <input name="senha" type="password" class="form-control" placeholder="Senha">
+                </div>
+                <br>
+                <div class="form-group">
+                  <input name="senha" type="password" class="form-control" placeholder="Confirme a senha">
+                </div>
+                <br>
+                <button class="btn btn-lg btn-info btn-block" type="submit">Cadastrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
 <!-- === FIM MAIN === -->
 {%endblock%}
