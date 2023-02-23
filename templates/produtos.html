@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{%block main%}
+<!-- === INÍCIO MAIN === -->
+<main class="main">
+
+	<div class="conteudo" align="center"> 
+
+		<h1 class="titulo">Confira nossos produtos:</h1>
+
+		<div class="receitas">
+			<h3 class="receitasp">Vitamina de Abacate</h3>
+			<img src="{{ url_for('static', filename = 'imagens/vitaminas/vitamina-abacate.jpg') }}" width="300px" height="300px" align="center">
+		</div>
+		<div class="receitas">
+			<h3 class="receitasp">Vitamina de Açai</h3>
+			<img src="{{ url_for('static', filename = 'imagens/vitaminas/vitamina-açai.jpg') }}" width="300px" height="300px">    
+		</div>
+		<div class="receitas">
+			<h3 class="receitasp">Vitamina de Banana com Aveia</h3>
+			<img src="{{ url_for('static', filename = 'imagens/vitaminas/vitamina-banana-aveia.jpg') }}" width="300px" height="300px">
+		</div>
+		<div class="receitas">
+			<h3 class="receitasp">Vitamina de Morango</h3>
+			<img src="{{ url_for('static', filename = 'imagens/vitaminas/vitamina-morango.jpg') }}" width="300px" height="300px">
+		</div>
+		<div class="receitas">
+			<h3 class="receitasp">Vitamina de Pessego</h3>
+			<img src="{{ url_for('static', filename = 'imagens/vitaminas/vitamina-pessego.png') }}" width="300px" height="300px">
+		</div>
+		<div class="receitas">
+			<h3 class="receitasp">Vitamina de Romã</h3>
+			<img src="{{ url_for('static', filename = 'imagens/vitaminas/vitamina-romã.jpg') }}" width="300px" height="300px">
+		</div>
+
+	</div>
+	
+</main>
+<!-- === FIM MAIN === -->
+{%endblock%}

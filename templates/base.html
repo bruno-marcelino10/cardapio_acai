@@ -35,10 +35,23 @@
 			<!-- === MENU DE NAVEGAÇÃO === -->
 			<div class="links_laterais">
 				<div align="right" style="color: white; margin-right: 15px;">
-					<a href="{{ url_for('login') }}" class="login">Login</a>
-
-
+					<a href="{{ url_for('login') }}" class="login">
+						{%with email = session["email"] %}
+							{%if email%}
+							<a href="{{ url_for('logout') }}" class="login">Sair</a>	
+							Olá {{email}}!
+							{%else%}
+								Login
+							{%endif%}
+						{%endwith%}
+					</a>
 				</div>
+
+				{% with message = get_flashed_messages() %}
+				{% if message %}
+				  <p>{{message}} </p>
+				{% endif %}
+			  {% endwith %}
 
 				<nav class="menu">
 				<a href="{{ url_for('produtos') }}">Produtos</a>

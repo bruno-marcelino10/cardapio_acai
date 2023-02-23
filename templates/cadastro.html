@@ -1,33 +1,33 @@
 {% extends "base.html" %}
 
 {%block main%}
+
+{% for item in values %}
+    <p>Email: {{item.email}}, Senha: {{item.senha}}</p>
+{%endfor%}
 <!-- === INÍCIO MAIN === -->
 <div style="margin: 20px; display: flex; flex-direction: column;">
 
-        <div class="texto" align="center">
-          <div>
-            <div class="card-header">
-              Cadastrar Usuário
-            </div>
-            <div >
-              <form action="#" method="post" class="formulario_email"> 
-                <div class="form-group">
-                  <input name="email" type="email" class="form-control" placeholder="Insira o E-mail">
-                </div>
-                <br>
-                <div class="form-group">
-                  <input name="senha" type="password" class="form-control" placeholder="Senha">
-                </div>
-                <br>
-                <div class="form-group">
-                  <input name="senha" type="password" class="form-control" placeholder="Confirme a senha">
-                </div>
-                <br>
-                <button class="btn btn-lg btn-info btn-block" type="submit">Cadastrar</button>
-              </form>
-            </div>
-          </div>
+    <div class="texto" align="center">
+      <div>
+        <div class="card-header">
+          Formulário de Cadastro
         </div>
+        <div >
+          <form action="#" method="post" class="formulario_cadastro"> 
+            <div class="form-group">
+              <input name="adicionar_email" type="email" class="form-control" placeholder="E-mail">
+            </div>
+            <br>
+            <div class="form-group">
+              <input name="adicionar_senha" type="password" class="form-control" placeholder="Senha">
+            </div>
+            <br>
+            <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
+          </form>
+        </div>
+      </div>
     </div>
+</div>
 <!-- === FIM MAIN === -->
 {%endblock%}
