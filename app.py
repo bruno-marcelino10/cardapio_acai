@@ -1,5 +1,4 @@
 from flask import Flask, render_template, url_for, request, session, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
 from models import db, users, cardapio
 
 app = Flask(__name__)
@@ -30,7 +29,6 @@ def login():
 
         login_existente = users.query.filter_by(email = email, senha = senha).first()
         admin = {"email": "admin@admin.com.br", "senha" : "admin"}
-
         if login_existente or (email == admin["email"] and senha == admin["senha"]):
             session["email"] = email
             session["senha"] = senha
@@ -38,43 +36,40 @@ def login():
         else:
             flash("E-mail ou senha incorretos!", "info")
             return render_template("login.html")
-            
     else:
             return render_template("login.html")
-
 
 @app.route("/logout")
 def logout():
     del session["email"]
     del session["senha"]
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
 
 @app.route("/login/admin") 
 def admin(): # só pode acessar se estiver logado
     if "email" in session and "senha" in session:
-        email = session["email"]
-        senha = session["senha"]
         return render_template("admin.html")
     else:
         return redirect(url_for("login.html"))
     
 @app.route("/login/admin/cadastro", methods = ["GET", "POST"])
 def cadastro(): # GET and UPDATE database
-
     if request.method == "POST":
         novo_email = request.form["adicionar_email"]
         nova_senha = request.form["adicionar_senha"]
 
-        usuario = users(novo_email, nova_senha)
-        db.session.add(usuario)
-        db.session.commit()
-        flash("usuário adicionado!", "info")
-
-        return redirect(url_for('cadastro'))
+        login_existente = users.query.filter_by(email = novo_email, senha = nova_senha).first()
+        if not login_existente:
+            usuario = users(novo_email, nova_senha)
+            db.session.add(usuario)
+            db.session.commit()
+            flash("usuário adicionado!", "info")
+            return redirect(url_for('cadastro'))
+        else:
+            flash("O usuário já consta na nossa base de dados", "info")
+            return render_template("cadastro.html", values = users.query.all())
     else:
         if "email" in session and "senha" in session:
-            email = session["email"]
-            senha = session["senha"]
             return render_template("cadastro.html", values = users.query.all())
         else:
             return redirect(url_for("login.html"))
@@ -82,25 +77,22 @@ def cadastro(): # GET and UPDATE database
 @app.route("/login/admin/alterar_cardapio", methods = ["GET", "POST"])
 def alterar_cardapio():
     if request.method == "POST":
-        if request.form["nome"] and request.form["ingredientes"] and request.form["preco"]: # formulario de adicionar preenchido
-            nome = request.form["nome"]
-            ingredientes = request.form["ingredientes"]
-            preco = request.form["preco"]
-
-            produto = cardapio(nome, ingredientes, preco)
+        novo_nome = request.form["nome"]
+        novo_ingredientes = request.form["ingredientes"]
+        novo_preco = request.form["preco"]
+        
+        produto_existente = users.query.filter_by(nome = novo_nome, ingredientes = novo_ingredientes, preco = novo_preco).first()
+        if not produto_existente:
+            produto = cardapio(novo_nome, novo_ingredientes, novo_preco)
             db.session.add(produto)
             db.session.commit()
             flash("Produto adicionado!", "info")
-
-            render_template(url_for("admin"))
-        else: 
-            flash("Produto inválido!")
-            return render_template("alterar_cardapio.html")
-        
+            return redirect(url_for('cadastro'))
+        else:
+            flash("O usuário já consta na nossa base de dados", "info")
+            return render_template("cadastro.html", values = users.query.all())    
     else:
         if "email" in session and "senha" in session:
-            email = session["email"]
-            senha = session["senha"]
             return render_template("alterar_cardapio.html")
         else:
             return redirect(url_for("login.html"))
