@@ -3,5 +3,24 @@
 {%block main%}
 <!-- === INÍCIO MAIN === -->
 
+<main class="main" >
+	<div class="conteudo" style="margin-top: 0;">
+	<div class="row" align="center" style="padding: 30px;">
+		<div class="col mb-12">
+			<div class="img_home" align="center">
+				<img src="../static/imagens/mascote.png" style="width: 600px; height: 600px; ">
+			</div>
+
+			<div class="card card-lg mb-3 bg-pink" style="padding: 25px; margin: 25px; width:500px" align="center">
+				<h2>O melhor Açaí de BH e região</h2>
+				<h3>Com a gente, a vida se torna mais doce!</h3>
+				<br>
+				<a href="{{ url_for('produtos') }}" class="btn btn-lg btn-success">COMPRE JÁ O SEU!</a>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
 <!-- === FIM MAIN === -->
 {%endblock%}

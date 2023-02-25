@@ -1,16 +1,32 @@
 /* === ANIMAÇÕES === */
 
+@keyframes pisca_pisca{
+	0%{
+		opacity: 0.4;
+	}
+
+	50%{
+		opacity: 1;
+	}
+
+	100%{
+		opacity: 0.4;
+	}
+}
+
 @keyframes startMenu{
 	0%{
 		opacity: 0;
 		position: absolute;
 		left: -300px;
+		color: black;
 	}
 
 	100%{
 		opacity: 1;
 		position: absolute;
 		left: 0;
+		color: whitesmoke;
 	}
 }
 
@@ -33,12 +49,15 @@
 	0%{
 		width: 500px;
 		opacity: 0.8;
+		background:  transparent;
+		color: whitesmoke;
 	}
 
 	100%{
-		width: 550px;
-		height: 420px;
+		width: 520px;
 		opacity: 1;
+		background: #ffe6ff;
+		color: black;
 
 	}
 }
@@ -50,6 +69,7 @@
 	font-family: arial;
 	margin: 0;
 	padding: 0;
+	max-width: 100%;
 }
 
 a{
@@ -60,6 +80,8 @@ body{
 	animation: startMenu 2s;
 	background:  linear-gradient(45deg, #ffccff ,#660066 );
 	background-repeat: no-repeat;
+	
+	max-width: 100%;
 }
 
 .cabecalho{
@@ -69,6 +91,7 @@ body{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .links_laterais{
@@ -135,9 +158,10 @@ main{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	max-width: 100%;
+	min-height: 100vh;
 
 }
-
 .slider {
     display: block;
     height: 293px;
@@ -155,6 +179,10 @@ main{
 	align-items: center;
 }*/
 
+.img_home{
+	animation: pisca_pisca 2s infinite;
+}
+
 
 
 .titulo{
@@ -165,16 +193,19 @@ main{
 }
 
 .receitas{
+	align-items: center;
+	float: left;
 	opacity: 0.85;
 	width: 500px;
-	height: 400px;
+	height: 450px;
 	margin: 20px;
 	/*display: flex;
 	flex-direction: column;
 	align-content: center*/;
-	background: whitesmoke;
+	background: transparent;
 	padding: 15px;
-	color: black;
+	color: whitesmoke;
+	border-radius: 10%;
 }
 
 .conteudo{
@@ -183,18 +214,20 @@ main{
 
 .receitas:hover{
 	animation: expandItems 1s;
-	width: 550px;
-	height: 420px;
+	background: #ffe6ff;
+	width: 520px;
 	opacity: 1;
+	color: black;
 }
 
 .rodape{
 	background: #660066;
 	height: 150px;
-	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 0%;
 }
 
 .unidades_rodape{
